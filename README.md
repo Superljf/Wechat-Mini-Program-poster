@@ -259,9 +259,20 @@ if (res.authSetting['scope.writePhotosAlbum'] === false) {
 ### 环境变量
 ```javascript
 const envVersion = wx.getAccountInfoSync().miniProgram.envVersion;
+const apiHost = envVersion === 'release' 
+  ? 'https://parents-mp.entstudy.com'     // 生产环境
+  : 'https://parents-mp-rls.entstudy.com'; // 测试环境
+```
 
-
-
+### 小程序配置
+```json
+{
+  "appId": "wx2c1425e1867a4c8d",
+  "pages": [
+    "pages/share-friend/index"
+  ]
+}
+```
 
 ## 测试用例
 
@@ -294,14 +305,14 @@ const envVersion = wx.getAccountInfoSync().miniProgram.envVersion;
 ## 效果展示
 
 ### 海报样式1 - 好朋友春面礼
-![效果图1](./img/效果图1.jpg)
+![test](./img/test.jpg)
 - 卡通风格设计
 - 活泼的色彩搭配
 - 突出推荐转介绍主题
 - 底部包含用户信息和二维码
 
 ### 海报样式2 - 清新学习风
-![效果图2](./img/效果图2.jpg)  
+![test2](./img/test2.jpg)  
 - 清新自然的插画风格
 - 温馨的学习场景
 - 适合教育类产品推广
@@ -309,4 +320,5 @@ const envVersion = wx.getAccountInfoSync().miniProgram.envVersion;
 
 ---
 
+## 联系方式
 
