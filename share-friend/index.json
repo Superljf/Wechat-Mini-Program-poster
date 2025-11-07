@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "分享好友",
+  "navigationBarBackgroundColor": "#FFFFFF",
+  "navigationBarTextStyle": "black",
+  "backgroundColor": "#FAFAFA",
+  "usingComponents": {
+    "van-toast": "@vant/weapp/toast/index",
+    "van-button": "@vant/weapp/button/index"
+  }
+} 
