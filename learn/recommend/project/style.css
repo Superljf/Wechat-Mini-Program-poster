@@ -1,0 +1,25 @@
+.project-module{
+  margin-bottom: 0.3rem;
+}
+.project-panel{
+  margin: 0 0.3rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 0.88rem;
+  border-top: 0.02rem solid var(--color-border);
+}
+.project-panel__more{
+  font-size: 0.24rem;
+  color: var(--color-text-primary);
+}
+.project-panel__more i{
+  font-size: 0.26rem;
+  color: var(--color-assistant);
+}
+
+.project-img__logo{
+  height: 0.32rem;
+  position: relative;
+  bottom: 0.04rem;
+}

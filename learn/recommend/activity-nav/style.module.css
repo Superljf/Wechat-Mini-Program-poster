@@ -1,0 +1,12 @@
+.activity-nav-warp{
+  position: fixed;
+  width: 1.4rem;
+  height: 1rem;
+  right: 0.4rem;
+  bottom: 1.7rem;
+  text-align: center;
+  z-index: 2;
+}
+.nav-img{
+  width: 1.2rem;
+}

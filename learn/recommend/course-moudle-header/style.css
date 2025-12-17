@@ -1,0 +1,29 @@
+.course-module-header{
+  text-align: center;
+  background-color: #fff;
+  color:rgba(51,51,51,1);
+  font-family:PingFangSC-Medium;
+  padding: .2rem;
+}
+.course-module-header__icon{
+  color: var(--color-primary);
+  font-size: 0.35rem;
+}
+.course-module-header__img{
+  height: 0.45rem;
+}
+.course-module-header__text{
+  font-size: .3rem;
+  font-weight:500;
+  display: block;
+  width: 100%;
+}
+.course-module-header__text__border{
+  display: block;
+  height: .04rem;
+  width: .5rem;
+  margin: 0 auto;
+  border-radius:3px;
+  background-color: var(--color-primary);
+  margin-top: 0.08rem;
+}

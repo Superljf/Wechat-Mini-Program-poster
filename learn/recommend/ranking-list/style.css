@@ -1,0 +1,172 @@
+.open-course-type{
+  width: 100%;
+  padding: .05rem 0;
+  text-align: center;
+  margin: 0 0 .5rem;
+}
+.open-course-type span{
+  padding: 4px 16px;
+  border: 1px solid #999999;
+}
+.open-course-type span:nth-child(1) {
+  border-right: none;
+  border-top-left-radius: 0.05rem;
+  border-bottom-left-radius: 0.05rem;
+}
+.open-course-type span:nth-child(2) {
+  border-left: none;
+  border-bottom-right-radius: 0.05rem;
+  border-top-right-radius: 0.05rem;
+}
+.open-course-type-active{
+  color: #fff;
+  background-color: var(--color-primary);
+  border: 1px solid var(--color-primary) !important;
+  border-radius: .05rem;
+}
+
+/* ranking-top-list  */
+.ranking-top-list {
+  display: flex;
+  width: 100%;
+}
+/* end ranking-top-list  */
+
+/* ranking-top-list-item  */
+.ranking-top-list-item{
+  width: 33.33%
+}
+.ranking-list-item-text_align {
+  text-align: center;
+  position: relative;
+}
+.ranking-list-item-img_container {
+  width: 1.4rem;
+  height: 1.4rem;
+  overflow: hidden;
+  margin: 0 auto;
+  margin-top: -0.14rem;
+  border-radius: 50%;
+  background-size: contain !important;
+}
+.ranking-list-item-HeadImg {
+  width: .6rem;
+  margin-top: .13rem;
+}
+.ranking-list-item-PersonImg {
+  width: 1.4rem;
+}
+.ranking-list-item-index {
+  display: inline-block;
+  font-size: .33rem;
+  font-weight: 500;
+  border-radius: 50%;
+  width: .35rem;
+  height: .35rem;
+  line-height: .35rem;
+  margin-top: .07rem;
+}
+.ranking-list-item-name {
+  font-size: .3rem;
+  margin-top: 2px;
+  color: #495060;
+  font-weight:500;
+  position: relative;
+}
+.ranking-list-item-time {
+  font-size: .24rem;
+  color: #999999;
+}
+.ranking-list-item-icon {
+  font-size: .5rem;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #F7BC33;
+}
+.i-reserve {
+  transform: translateY(-50%) rotate(180deg);
+  color: #E73928;
+}
+/* end ranking-top-list-item  */
+
+/* ranking-bot-list  */
+.ranking-bot-list{
+  position: relative;
+  padding: .4rem;
+}
+.ranking-bot-list-item {
+  display: flex;
+  margin-bottom: 20px;
+  flex-flow:  row nowrap;
+  justify-content: space-between;
+}
+.ranking-bot-list-left{
+  height: .6rem;
+  line-height: .6rem;
+}
+.ranking-bot-list-index {
+  font-size: .28rem;
+  display: inline-block;
+  width: .44rem;
+  height: .44rem;
+  line-height: .42rem;
+  border-radius: 50%;
+  border:1px solid #495060;
+  text-align: center;
+  vertical-align: middle;
+}
+.ranking-bot-list-img_container {
+  display: inline-block;
+  width: .8rem;
+  height: .8rem;
+  border-radius: 50% ;
+  vertical-align: middle;
+  margin-left: .4rem;
+  overflow: hidden;
+  background-size: contain !important;
+}
+.ranking-bot-list-img {
+  width: .8rem;
+}
+.ranking-bot-list-name {
+  margin-left: 11px;
+  font-size: .28rem;
+  vertical-align: middle;
+}
+
+.ranking-bot-list-right {
+  height: .8rem;
+  line-height: .8rem;
+  width: 110px;
+  position: relative;
+}
+.ranking-bot-list-time {
+  font-size: .28rem;
+  vertical-align: middle;
+  color: #999999;
+  position: absolute;
+  right: 0;
+}
+.ranking-bot-list-icon {
+  font-size: 22px;
+  vertical-align: middle;
+  color: #F7BA2A;
+  position: absolute;
+}
+.ranking-bot-list-icon-reserve {
+  transform: rotate(180deg);
+  color: #E73928;
+}
+.ranking-bot-list-footer {
+  text-align: left;
+  color: #E73928;
+}
+
+/* end ranking-bot-list  */
+.no-ranking-list {
+  width: 100%;
+  text-align: center;
+  font-size: .3rem;
+}

@@ -1,0 +1,11 @@
+.learn-scroll-container{
+  /* height: var(--scroll-height-secondary); */
+  overflow-y: auto;
+  /* padding-top: 0.2rem; */
+}
+.activity-text{
+  text-align: center;
+  font-size: .28rem;
+  line-height: 0.6rem;
+  color: #E60027;
+}

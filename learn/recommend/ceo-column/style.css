@@ -1,0 +1,25 @@
+/* course-panel */
+.course-panel{
+  background-color: #fff;
+  padding: 0 0.3rem;
+  margin-bottom: 0.24rem;
+}
+.course-panel-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 0.88rem;
+}
+.course-panel-header__title{
+  border-left: 0.06rem solid var(--color-primary);
+  line-height: 1;
+  text-indent: 0.2rem;
+}
+.course-panel-header__more{
+  font-size: 0.24rem;
+  color: var(--color-text-primary);
+}
+.course-panel-header__more i{
+  font-size: 0.26rem;
+  color: var(--color-assistant);
+}

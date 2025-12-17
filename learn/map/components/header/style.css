@@ -1,0 +1,138 @@
+.header-container {
+    padding: 0.3rem;
+}
+
+.header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.2rem;
+    height: 0.68rem;
+    background: #FFFFFF;
+    border-radius: 0.38rem;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 0 0.3rem;
+}
+
+/* 左侧岗位选择器 */
+.post-selector {
+    flex: 0 0 auto;
+    position: relative;
+}
+
+.dropdown-wrapper {
+    position: relative;
+}
+
+.dropdown-trigger {
+    display: flex;
+    align-items: center;
+    gap: 0.1rem;
+    cursor: pointer;
+}
+
+.post-name {
+    font-size: 0.28rem;
+    color: #333333;
+    font-weight: 500;
+}
+
+.dropdown-icon {
+    font-size: 0.2rem;
+    color: #333333;
+    font-size: 8px;
+    margin-top: 2px;
+}
+
+.post-name-static {
+    font-size: 0.28rem;
+    color: #333333;
+    font-weight: 500;
+}
+
+/* 下拉菜单 */
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 0.2rem);
+    left: -0.3rem;
+    min-width: 3rem;
+    background: #FFFFFF;
+    border-radius: 0.16rem;
+    box-shadow: 0 0.08rem 0.24rem rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 0.2rem 0;
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    padding: 0.2rem 0.3rem;
+    cursor: pointer;
+    position: relative;
+}
+
+.dropdown-item:active {
+    background-color: #f5f5f5;
+}
+
+.dropdown-item-selected {
+    background-color: #fff5f5;
+}
+
+.post-type {
+    font-size: 0.26rem;
+    color: #999999;
+    margin-right: 0.15rem;
+}
+
+.post-divider {
+    color: #E5E5E5;
+    margin: 0 0.15rem;
+}
+
+.post-name-text {
+    font-size: 0.26rem;
+    color: #333333;
+    flex: 1;
+}
+
+.check-icon {
+    font-size: 0.28rem;
+    color: #E60027;
+    margin-left: 0.2rem;
+}
+
+/* 中间职级信息 */
+.level-info {
+    flex: 1;
+    text-align: center;
+    font-size: 0.26rem;
+    color: #999999;
+}
+
+/* 右侧按钮 */
+.model-btn {
+    flex: 0 0 auto;
+    font-size: 0.26rem;
+    color: #666;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.model-btn:active {
+    opacity: 0.7;
+}
+
+.header-title {
+    font-size: 0.36rem;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 0.3rem;
+    text-align: center;
+}
+
+.header-title-text {
+    font-size: 0.36rem;
+    font-weight: bold;
+    color: #333333;
+}

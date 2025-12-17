@@ -1,0 +1,39 @@
+.culture-course{
+  position: relative;
+}
+.culture-course::after{
+  content: '';
+  display: block;
+  width: 6.9rem;
+  height: 0.02rem;
+  background: var(--color-background-secondary);
+  position: absolute;
+  left: 0.3rem;
+  bottom: 0;
+}
+
+.culture-course__img{
+  width: 3.3rem;
+  height: 2rem;
+  border-radius: 0.06rem;
+  display: block;
+}
+.ability-type-item{
+  width: 3.3rem;
+  height: 2rem;
+  border-radius: 0.06rem;
+  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  border-radius: 0.06rem;
+}
+.ability-type-item__text{
+  color: #fff;
+  font-size: 0.2rem;
+  border: 0.02rem solid #fff;
+  padding: 0.12rem 0.2rem;
+  background:rgba(255,255,255,0.2);
+}

@@ -1,0 +1,17 @@
+.learning-map-container {
+    min-height: 100vh;
+    /* background-color: var(--color-background-primary, #f5f5f5);
+   */
+    background-color: #fff;
+}
+
+.learning-map-content {
+    padding-bottom: 1rem;
+}
+
+.error-container {
+    padding: 1rem;
+    text-align: center;
+    color: var(--color-text-secondary, #999);
+    font-size: 0.28rem;
+}

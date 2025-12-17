@@ -1,0 +1,51 @@
+.learning-path-container {
+    background-color: #fff;
+    overflow-x: auto;
+    /* 横向滚动 */
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    /* iOS平滑滚动 */
+}
+
+.path-background {
+    position: relative;
+    width: 500px;
+    /* 固定宽度：点位不挤，可以左右滑动查看 */
+    /* height由JS动态设置：一条序列200px，两条序列300px */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+}
+
+.path-svg {
+    width: 100%;
+    /* 与path-background保持一致 */
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+/* 呱呱样式 */
+.guagua {
+    transition: all 0.3s ease-in-out;
+}
+
+.guagua-moving {
+    transition: all 0.3s ease-in-out;
+    animation: guaguaJump 0.3s ease-in-out infinite;
+}
+
+@keyframes guaguaJump {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
