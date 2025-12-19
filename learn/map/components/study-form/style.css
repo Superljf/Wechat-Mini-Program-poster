@@ -76,8 +76,8 @@
     box-sizing: border-box;
     display: flex;
     justify-content: flex-start;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+    overflow: visible;
+    position: relative;
 }
 
 .data-wrapper {
@@ -122,11 +122,16 @@
     top: 0;
     z-index: 11;
     background: linear-gradient(to bottom, #FDFCFF 0%, #EAF0F9 100%);
+    transition: box-shadow 0.3s ease;
+}
+
+.data-header-fixed.sticky-active {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .data-cell-fixed {
     width: 1.8rem;
-    min-height: 0.8rem;
+    height: 50px;
     padding: 0.2rem;
     box-sizing: border-box;
     display: flex;
@@ -140,7 +145,6 @@
     border-left: 1px solid #E9E9E9;
     border-right: 1px solid #E9E9E9;
     word-break: break-word;
-    line-height: 1.5;
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 6;
@@ -157,14 +161,17 @@
 }
 
 .data-body-fixed {
-    overflow-y: visible;
+    overflow-y: auto;
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
     gap: 0;
+    max-height: 70vh;
+    -webkit-overflow-scrolling: touch;
 }
 
 .data-body-fixed::-webkit-scrollbar {
+    width: 0;
     display: none;
 }
 
@@ -194,6 +201,19 @@
     -webkit-overflow-scrolling: touch;
 }
 
+.data-scrollable::-webkit-scrollbar {
+    height: 4px;
+}
+
+.data-scrollable::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+}
+
+.data-scrollable::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+}
+
 .data-header-scroll {
     position: sticky;
     top: 0;
@@ -205,11 +225,16 @@
     width: max-content;
     flex-shrink: 0;
     align-self: flex-start;
+    transition: box-shadow 0.3s ease;
+}
+
+.data-header-scroll.sticky-active {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .data-cell-scroll {
     width: 3rem;
-    min-height: 0.8rem;
+    height: 50px;
     padding: 0.2rem;
     padding-bottom: 0.2rem;
     box-sizing: border-box;
@@ -296,7 +321,7 @@
 }
 
 .data-body-scroll {
-    overflow-y: visible;
+    overflow-y: auto;
     overflow-x: hidden;
     gap: 0;
     display: flex;
@@ -305,9 +330,12 @@
     width: max-content;
     flex-shrink: 0;
     align-self: flex-start;
+    max-height: 70vh;
+    -webkit-overflow-scrolling: touch;
 }
 
 .data-body-scroll::-webkit-scrollbar {
+    width: 0;
     display: none;
 }
 

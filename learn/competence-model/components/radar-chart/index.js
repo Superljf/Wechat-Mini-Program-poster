@@ -39,7 +39,7 @@ class RadarChart extends Component {
         itemColor: '#D0021B',
         tabColor: '#D0021B',
         tabBgColor: '#FEF4F6',
-        headerGradient: 'linear-gradient(180deg, #FFFFFF 0%, #FEF4F6 100%)',
+        headerGradient: 'linear-gradient(180deg,#FEF4F6 0%, #FFFFFF 100%)',
       },
       {
         areaColor: 'rgba(238, 161, 32, 0.2)',
@@ -48,7 +48,7 @@ class RadarChart extends Component {
         tabColor: '#EEA120',
         tabBgColor: '#FFF9F2',
         headerGradient:
-          'linear-gradient(180deg, rgba(255,239,218,0) 0%, #FFF9F2 100%)',
+          'linear-gradient(180deg,  #FFF9F2 0%, rgba(255,239,218,0) 100%)',
       },
       {
         areaColor: 'rgba(23, 194, 128, 0.2)',
@@ -65,7 +65,7 @@ class RadarChart extends Component {
         tabColor: '#3F7BF8',
         tabBgColor: '#F4F7FF',
         headerGradient:
-          'linear-gradient(180deg, rgba(244,247,255,0) 0%, #F4F7FF 100%)',
+          'linear-gradient(180deg,  #F4F7FF 0%, rgba(244,247,255,0) 100%)',
       },
     ];
     return colors[index % colors.length];

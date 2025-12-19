@@ -10,14 +10,18 @@ class StudyForm extends Component {
     super(props);
     this.state = {
       activeAbilityTypeId: null,
-      expandedCells: [], // 存储展开的单元格，格式为 'rowIndex-colIndex'
+      expandedCells: [], // 存储展开的单元格,格式为 'rowIndex-colIndex'
       cellNeedsExpandMap: {}, // 存储每个单元格是否需要展开按钮
       isScrolling: false, // 是否正在滚动
+      isHeaderSticky: false, // 表头是否处于吸顶状态
     };
     this.fixedBodyRef = React.createRef();
     this.scrollBodyRef = React.createRef();
     this.fixedColumnRef = React.createRef();
     this.scrollableRef = React.createRef();
+    this.dataSectionRef = React.createRef();
+    this.fixedHeaderRef = React.createRef();
+    this.scrollHeaderRef = React.createRef();
   }
 
   componentDidMount() {
@@ -485,18 +489,16 @@ class StudyForm extends Component {
     if (this.fixedBodyRef.current) {
       this.fixedBodyRef.current.scrollTop = e.target.scrollTop;
     }
-    this.syncRowHeights();
   };
 
   syncFixedScroll = (e) => {
     if (this.scrollBodyRef.current) {
       this.scrollBodyRef.current.scrollTop = e.target.scrollTop;
     }
-    this.syncRowHeights();
   };
 
   /**
-   * 处理横向滚动，显示/隐藏阴影
+   * 处理横向滚动,显示/隐藏阴影
    */
   handleHorizontalScroll = (e) => {
     const scrollLeft = e.target.scrollLeft;
@@ -506,6 +508,18 @@ class StudyForm extends Component {
       } else {
         this.fixedColumnRef.current.classList.remove(style['scrolling']);
       }
+    }
+  };
+
+  /**
+   * 处理表格内部垂直滚动,实现表头吸顶效果
+   */
+  handleTableScroll = (e) => {
+    const scrollTop = e.target.scrollTop;
+    const shouldSticky = scrollTop > 0;
+
+    if (shouldSticky !== this.state.isHeaderSticky) {
+      this.setState({ isHeaderSticky: shouldSticky });
     }
   };
 
@@ -542,7 +556,7 @@ class StudyForm extends Component {
         {tableData.length > 0 && (
           <div
             className={style['data-section']}
-            onScroll={this.handleHorizontalScroll}
+            ref={this.dataSectionRef}
           >
             <div className={style['data-wrapper']}>
               {/* 固定第一列 */}
@@ -550,7 +564,12 @@ class StudyForm extends Component {
                 className={style['data-fixed-column']}
                 ref={this.fixedColumnRef}
               >
-                <div className={style['data-header-fixed']}>
+                <div 
+                  className={`${style['data-header-fixed']} ${
+                    this.state.isHeaderSticky ? style['sticky-active'] : ''
+                  }`}
+                  ref={this.fixedHeaderRef}
+                >
                   <div
                     style={{ whiteSpace: 'nowrap' }}
                     className={`${style['data-cell-fixed']} ${style['header-first-row']}`}
@@ -561,7 +580,10 @@ class StudyForm extends Component {
                 <div
                   className={style['data-body-fixed']}
                   ref={this.fixedBodyRef}
-                  onScroll={this.syncFixedScroll}
+                  onScroll={(e) => {
+                    this.syncFixedScroll(e);
+                    this.handleTableScroll(e);
+                  }}
                 >
                   {tableData.map((row, rowIndex) => (
                     <div
@@ -580,8 +602,14 @@ class StudyForm extends Component {
               <div
                 className={style['data-scrollable']}
                 ref={this.scrollableRef}
+                onScroll={this.handleHorizontalScroll}
               >
-                <div className={style['data-header-scroll']}>
+                <div 
+                  className={`${style['data-header-scroll']} ${
+                    this.state.isHeaderSticky ? style['sticky-active'] : ''
+                  }`}
+                  ref={this.scrollHeaderRef}
+                >
                   {this.tableHeaders.map((header, colIndex) => {
                     if (!visibleColumns.includes(colIndex)) return null;
                     return (
@@ -599,7 +627,10 @@ class StudyForm extends Component {
                 <div
                   className={style['data-body-scroll']}
                   ref={this.scrollBodyRef}
-                  onScroll={this.syncScrollBody}
+                  onScroll={(e) => {
+                    this.syncScrollBody(e);
+                    this.handleTableScroll(e);
+                  }}
                 >
                   {tableData.map((row, rowIndex) => (
                     <div

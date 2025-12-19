@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 
-import Recommend from '../learn/recommend/index';
+// import Recommend from '../learn/recommend/index';
 import LearningMap from '../learn/map/index';
 import CompetenceModel from '../learn/competence-model/index';
 // import LearnNav from '../../components/learn-nav/index';
@@ -53,8 +53,8 @@ class Learn extends Component {
       >
         {/*<LearnNav learnNavMenus={LearnNavMenus} />*/}
         <Switch>
-          <Redirect exact from={match.url} to={`${match.url}/recommend`} />
-          <Route path={`${match.url}/recommend`} component={Recommend} />
+          <Redirect exact from={match.url} to={`${match.url}/map`} />
+          {/* <Route path={`${match.url}/recommend`} component={Recommend} /> */}
           <Route path={`${match.url}/map`} component={LearningMap} />
           <Route
             path={`${match.url}/competence-model`}
