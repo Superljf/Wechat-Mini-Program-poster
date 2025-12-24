@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>2025我的成长战报</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+      background: linear-gradient(180deg, #4a5568 0%, #2d3748 100%);
+      min-height: 100vh;
+      padding: 20px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .back-btn {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      padding: 8px;
+      margin-right: 10px;
+    }
+
+    .page-title {
+      color: white;
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    /* 海报容器 */
+    .poster-wrapper {
+      background: linear-gradient(180deg, #5a6c7d 0%, #3d4a5a 100%);
+      border-radius: 12px;
+      padding: 20px;
+      max-width: 400px;
+      margin: 0 auto 20px;
+    }
+
+    .poster-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .poster-title {
+      color: white;
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: 1px;
+    }
+
+    /* 主卡片 */
+    .poster-card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    /* 英雄区域 */
+    .hero-section {
+      position: relative;
+      height: 200px;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    .background-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .school-tag {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(255, 255, 255, 0.95);
+      color: #333;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 500;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    /* 人物头像 */
+    .character-avatar {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .avatar-circle {
+      width: 50px;
+      height: 50px;
+      background: #ffd700;
+      border-radius: 50%;
+      position: relative;
+      margin-bottom: -5px;
+      z-index: 2;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .avatar-face {
+      width: 30px;
+      height: 25px;
+      background: #ffe680;
+      border-radius: 50%;
+      position: absolute;
+      bottom: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .avatar-face::before {
+      content: '';
+      width: 4px;
+      height: 4px;
+      background: #333;
+      border-radius: 50%;
+      position: absolute;
+      top: 8px;
+      left: 8px;
+    }
+
+    .avatar-face::after {
+      content: '';
+      width: 4px;
+      height: 4px;
+      background: #333;
+      border-radius: 50%;
+      position: absolute;
+      top: 8px;
+      right: 8px;
+    }
+
+    .avatar-body {
+      width: 60px;
+      height: 40px;
+      background: #ff4444;
+      border-radius: 20px 20px 0 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .avatar-body::before {
+      content: '';
+      width: 24px;
+      height: 14px;
+      background: #ffcc00;
+      border-radius: 50%;
+      position: absolute;
+      top: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    /* 称号标题 */
+    .title-badge {
+      text-align: center;
+      padding: 16px;
+      border: 2px dashed #ccc;
+      border-radius: 8px;
+      margin-bottom: 24px;
+      background: #fafafa;
+    }
+
+    .quote-left,
+    .quote-right {
+      color: #999;
+      font-size: 24px;
+      font-weight: bold;
+      font-family: Georgia, serif;
+    }
+
+    .title-text {
+      font-size: 22px;
+      font-weight: bold;
+      color: #333;
+      margin: 0 8px;
+      letter-spacing: 2px;
+    }
+
+    /* 数据统计 */
+    .stats-section {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 24px;
+    }
+
+    .stat-item {
+      text-align: center;
+      flex: 1;
+    }
+
+    .stat-number {
+      font-size: 32px;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 8px;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .stat-unit {
+      font-size: 14px;
+      color: #999;
+      margin-left: 2px;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: #666;
+      white-space: nowrap;
+    }
+
+    /* 寄语区域 */
+    .message-box {
+      border: 2px dashed #e0e0e0;
+      border-radius: 8px;
+      padding: 16px;
+      text-align: center;
+      background: #f8f9fa;
+    }
+
+    .message-text {
+      font-size: 14px;
+      line-height: 24px;
+      color: #333;
+    }
+
+    .year-current,
+    .year-next {
+      color: #1890ff;
+      font-weight: 600;
+    }
+
+    .message-learn {
+      color: #333;
+      font-weight: 500;
+    }
+
+    .heart-icon {
+      color: #ff4d4f;
+      font-size: 16px;
+      margin-left: 4px;
+    }
+
+    .message-continue {
+      color: #333;
+      font-weight: 500;
+    }
+
+    /* 底部学校名 */
+    .poster-footer {
+      text-align: center;
+      margin-top: 16px;
+    }
+
+    .school-name {
+      color: white;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    /* 生成按钮 */
+    .generate-btn {
+      width: 100%;
+      max-width: 400px;
+      display: block;
+      margin: 0 auto;
+      background: linear-gradient(90deg, #ff9800 0%, #ff6b00 100%);
+      color: white;
+      border: none;
+      border-radius: 25px;
+      padding: 16px 32px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(255, 152, 0, 0.4);
+      transition: all 0.3s ease;
+    }
+
+    .generate-btn:active {
+      transform: scale(0.98);
+    }
+
+    .generate-btn:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+
+    .arrow {
+      margin-left: 8px;
+      font-size: 20px;
+    }
+
+    /* Loading */
+    .loading {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      border-top-color: white;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* 预览模态框 */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      max-width: 90%;
+      max-height: 90vh;
+      background: white;
+      border-radius: 12px;
+      overflow: auto;
+    }
+
+    .modal-image {
+      width: 100%;
+      display: block;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: white;
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      font-size: 24px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .modal-actions {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 12px;
+    }
+
+    .modal-btn {
+      background: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    @media (max-width: 768px) {
+      .poster-wrapper {
+        max-width: 100%;
+      }
+      
+      .stat-number {
+        font-size: 28px;
+      }
+      
+      .title-text {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-header">
+    <button class="back-btn" onclick="history.back()">←</button>
+    <h1 class="page-title">2025我的成长战报</h1>
+  </div>
+
+  <!-- 海报主体 -->
+  <div class="poster-wrapper" id="poster">
+    <div class="poster-header">
+      <h2 class="poster-title">2025专属成长战报关键词</h2>
+    </div>
+
+    <div class="poster-card">
+      <!-- 背景图和人物 -->
+      <div class="hero-section">
+        <img 
+          src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80" 
+          alt="background" 
+          class="background-image"
+          crossorigin="anonymous"
+          id="bgImage"
+        />
+        <div class="character-avatar">
+          <div class="avatar-circle">
+            <div class="avatar-face"></div>
+          </div>
+          <div class="avatar-body"></div>
+        </div>
+        <span class="school-tag" id="schoolName">牛逼人力大学</span>
+      </div>
+
+      <!-- 称号标题 -->
+      <div class="title-badge">
+        <span class="quote-left">"</span>
+        <span class="title-text" id="titleText">学神卷王天花板</span>
+        <span class="quote-right">"</span>
+      </div>
+
+      <!-- 数据统计 -->
+      <div class="stats-section">
+        <div class="stat-item">
+          <div class="stat-number" id="courseCount">110</div>
+          <div class="stat-label">累计学习课程数</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">
+            <span id="studyDays">268</span>
+            <span class="stat-unit">小时</span>
+          </div>
+          <div class="stat-label">累计学习时长</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" id="readingCount">1260</div>
+          <div class="stat-label">累计阅读数</div>
+        </div>
+      </div>
+
+      <!-- 底部寄语 -->
+      <div class="message-box">
+        <div class="message-text">
+          <span class="year-current">2025,</span>
+          <span class="message-learn"> 快乐学习 </span>
+          <span class="heart-icon">♥</span>
+        </div>
+        <div class="message-text">
+          <span class="year-next">2026,</span>
+          <span class="message-continue"> 继续陪伴</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="poster-footer">
+      <div class="school-name" id="footerSchool">牛逼人力大学</div>
+    </div>
+  </div>
+
+  <!-- 生成按钮 -->
+  <button class="generate-btn" id="generateBtn" onclick="generatePoster()">
+    <span id="btnText">保存我的2025年成长战报</span>
+    <span class="arrow" id="btnArrow">→</span>
+  </button>
+
+  <!-- 预览模态框 -->
+  <div class="modal" id="modal">
+    <button class="modal-close" onclick="closeModal()">×</button>
+    <div class="modal-content">
+      <img src="" alt="海报预览" class="modal-image" id="previewImage">
+    </div>
+    <div class="modal-actions">
+      <button class="modal-btn" onclick="downloadImage()">下载图片</button>
+      <button class="modal-btn" onclick="closeModal()">关闭</button>
+    </div>
+  </div>
+
+  <!-- html2canvas CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+
+  <script>
+    // 配置数据（可以从后端 API 获取）
+    const config = {
+      title: '学神卷王天花板',
+      courseCount: 110,
+      studyDays: 268,
+      readingCount: 1260,
+      schoolName: '牛逼人力大学',
+      backgroundImage: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
+      year: 2025
+    };
+
+    // 初始化数据
+    function initData() {
+      document.getElementById('titleText').textContent = config.title;
+      document.getElementById('courseCount').textContent = config.courseCount;
+      document.getElementById('studyDays').textContent = config.studyDays;
+      document.getElementById('readingCount').textContent = config.readingCount;
+      document.getElementById('schoolName').textContent = config.schoolName;
+      document.getElementById('footerSchool').textContent = config.schoolName;
+      
+      // 预加载背景图片
+      const img = new Image();
+      img.crossOrigin = 'anonymous';
+      img.src = config.backgroundImage;
+      img.onload = function() {
+        document.getElementById('bgImage').src = config.backgroundImage;
+      };
+    }
+
+    // 生成海报
+    let generatedImageData = null;
+
+    async function generatePoster() {
+      const btn = document.getElementById('generateBtn');
+      const btnText = document.getElementById('btnText');
+      const btnArrow = document.getElementById('btnArrow');
+      const poster = document.getElementById('poster');
+
+      // 禁用按钮
+      btn.disabled = true;
+      btnText.textContent = '生成中';
+      btnArrow.innerHTML = '<span class="loading"></span>';
+
+      try {
+        // 等待图片加载完成
+        await waitForImages();
+
+        // 生成海报
+        const canvas = await html2canvas(poster, {
+          useCORS: true,
+          allowTaint: true,
+          scale: 2,
+          backgroundColor: '#5a6c7d',
+          logging: false,
+          imageTimeout: 0,
+          width: poster.offsetWidth,
+          height: poster.offsetHeight
+        });
+
+        // 转换为图片
+        generatedImageData = canvas.toDataURL('image/png', 1.0);
+
+        // 显示预览
+        showModal(generatedImageData);
+
+      } catch (error) {
+        console.error('生成失败:', error);
+        alert('生成海报失败，请重试！\n错误信息: ' + error.message);
+      } finally {
+        // 恢复按钮
+        btn.disabled = false;
+        btnText.textContent = '保存我的2025年成长战报';
+        btnArrow.textContent = '→';
+      }
+    }
+
+    // 等待所有图片加载完成
+    function waitForImages() {
+      return new Promise((resolve) => {
+        const images = document.querySelectorAll('#poster img');
+        let loaded = 0;
+        
+        if (images.length === 0) {
+          resolve();
+          return;
+        }
+
+        images.forEach(img => {
+          if (img.complete) {
+            loaded++;
+            if (loaded === images.length) resolve();
+          } else {
+            img.onload = () => {
+              loaded++;
+              if (loaded === images.length) resolve();
+            };
+            img.onerror = () => {
+              loaded++;
+              if (loaded === images.length) resolve();
+            };
+          }
+        });
+      });
+    }
+
+    // 显示模态框
+    function showModal(imageData) {
+      const modal = document.getElementById('modal');
+      const previewImage = document.getElementById('previewImage');
+      
+      previewImage.src = imageData;
+      modal.classList.add('active');
+    }
+
+    // 关闭模态框
+    function closeModal() {
+      const modal = document.getElementById('modal');
+      modal.classList.remove('active');
+    }
+
+    // 下载图片
+    function downloadImage() {
+      if (!generatedImageData) return;
+
+      const link = document.createElement('a');
+      link.download = `${config.year}年度成长报告-${config.schoolName}.png`;
+      link.href = generatedImageData;
+      link.click();
+    }
+
+    // 从 URL 参数或 API 获取数据
+    function loadDataFromAPI() {
+      // 示例：从 URL 参数获取
+      const urlParams = new URLSearchParams(window.location.search);
+      
+      if (urlParams.get('title')) {
+        config.title = urlParams.get('title');
+      }
+      if (urlParams.get('courseCount')) {
+        config.courseCount = parseInt(urlParams.get('courseCount'));
+      }
+      if (urlParams.get('studyDays')) {
+        config.studyDays = parseInt(urlParams.get('studyDays'));
+      }
+      if (urlParams.get('readingCount')) {
+        config.readingCount = parseInt(urlParams.get('readingCount'));
+      }
+      if (urlParams.get('schoolName')) {
+        config.schoolName = decodeURIComponent(urlParams.get('schoolName'));
+      }
+
+      // 或者从 API 获取
+      /*
+      fetch('/api/annual-report/2025')
+        .then(res => res.json())
+        .then(data => {
+          config.title = data.achievement_title;
+          config.courseCount = data.total_courses;
+          config.studyDays = data.total_study_hours;
+          config.readingCount = data.total_readings;
+          config.schoolName = data.school_name;
+          initData();
+        })
+        .catch(err => {
+          console.error('数据加载失败:', err);
+          initData(); // 使用默认数据
+        });
+      */
+    }
+
+    // 页面加载时初始化
+    window.addEventListener('DOMContentLoaded', function() {
+      loadDataFromAPI();
+      initData();
+    });
+
+    // 点击模态框背景关闭
+    document.getElementById('modal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeModal();
+      }
+    });
+  </script>
+</body>
+</html>

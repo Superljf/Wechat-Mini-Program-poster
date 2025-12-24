@@ -1,0 +1,1603 @@
+.swiper-container,
+#h5-swiper-yearly {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+}
+
+/* ===================== 字体：数字专用（字魂锐界黑） ===================== */
+@font-face {
+  font-family: 'YearlyNumberFont';
+  src: url('./number.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.swiper-slide {
+  height: 100vh;
+  width: 100vw;
+  font-size: 0.3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.swiper-slide p {
+  line-height: 0.9rem;
+}
+
+.swiper-slide p span {
+  font-weight: bold;
+  color: rgba(204, 0, 0, 1);
+}
+
+.big-num {
+  font-size: 0.5rem;
+}
+
+/* Page1 封面页 */
+.page-1 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.page1-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.page1-top-text-container {
+  position: absolute;
+  top: 48px;
+  left: 0;
+  width: 100%;
+  height: 146px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.page1-top-text {
+  width: 278px;
+  height: 146px;
+  z-index: 1;
+  margin: 0 auto;
+  /* 添加光晕呼吸效果 */
+  filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.3));
+  animation: page1TitleGlow 3s ease-in-out infinite;
+}
+
+/* 标题光晕呼吸动画 */
+@keyframes page1TitleGlow {
+
+  0%,
+  100% {
+    filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.3));
+  }
+
+  50% {
+    filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.3)) drop-shadow(0 0 30px rgba(255, 215, 0, 0.3));
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0) scale(1);
+  }
+
+  25% {
+    transform: translateX(-5px) scale(1.05);
+  }
+
+  50% {
+    transform: translateX(5px) scale(1.1);
+  }
+
+  75% {
+    transform: translateX(-5px) scale(1.05);
+  }
+
+  100% {
+    transform: translateX(0) scale(1);
+  }
+}
+
+.page1-text {
+  position: absolute;
+  top: 3.3rem;
+  left: 0.8rem;
+  color: #ffffff;
+  font-size: 0.36rem;
+  line-height: 34px;
+  z-index: 2;
+  font-family: fangsong;
+}
+
+.page1-text p {
+  line-height: 0.8rem;
+  margin-bottom: 0.2rem;
+}
+
+.page1-btn-see {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 206px;
+  height: 50px;
+  z-index: 3;
+  cursor: pointer;
+  margin-top: 28px;
+}
+
+.page1-btn-see-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('@/assets/imgs/report/page1_btn_see.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 206px;
+  height: 50px;
+  cursor: pointer;
+  margin-top: 28px;
+  margin: 28px auto;
+  z-index: 99999;
+  transition: all 0.3s ease;
+  animation: btnFloat 2s ease-in-out infinite;
+}
+
+.page1-btn-see-container:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+.page1-btn-see-container:active {
+  transform: scale(0.98);
+}
+
+.page1-btn-see-text {
+  font-size: 16px;
+  color: #fff;
+  line-height: 14px;
+  text-align: left;
+  font-style: normal;
+  font-family: STYuanti-SC, STYuanti-SC;
+  font-weight: 400;
+  margin-left: 6px;
+  transition: transform 0.3s ease;
+}
+
+.page1-btn-see-container:hover .page1-btn-see-text {
+  transform: translateX(3px);
+}
+
+.page1-btn-see-container img {
+  width: 7px;
+  height: 8px;
+}
+
+.page1-arrow-1 {
+  animation: arrowMoveRight 1.2s ease-in-out infinite;
+}
+
+.page1-arrow-2 {
+  animation: arrowMoveRight 1.2s ease-in-out infinite;
+  animation-delay: 0.2s;
+}
+
+
+@keyframes arrowMoveRight {
+  0% {
+    transform: translateX(0);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: translateX(2px);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 0.6;
+  }
+}
+
+
+/* 按钮浮动动画 */
+@keyframes btnFloat {
+
+  0%,
+  100% {
+    scale: 1;
+  }
+
+  50% {
+    scale: 1.1;
+  }
+}
+
+page1-btn-see-text
+
+/* Page2 课程页 */
+.page-2 {
+  position: relative;
+}
+
+.page2-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.page2-text {
+  position: absolute;
+  top: 1.2rem;
+  left: 40px;
+  color: #ffffff;
+  line-height: 0.8rem;
+  z-index: 2;
+  font-family: cursive;
+  font-family: STYuanti-SC, STYuanti-SC;
+  font-weight: 400;
+  font-size: 18px;
+  color: #60390E;
+  line-height: 14px;
+  text-align: left;
+  font-style: normal;
+}
+
+.yearly-text {
+
+
+  font-size: 22px;
+  color: #60390E;
+  line-height: 16px;
+  text-align: left;
+  font-style: normal;
+  margin-top: 32px;
+  font-family: emoji;
+  margin-bottom: 16px;
+  font-family: 'YearlyNumberFont', zihunruijiehei, 'DIN Alternate', DIN, 'Arial Black', Arial, sans-serif;
+
+}
+
+
+.yearly-text_3 {
+
+  font-size: 22px;
+  color: #FDE419;
+  line-height: 16px;
+  text-align: left;
+  font-style: normal;
+  margin-bottom: 16px;
+  opacity: 0;
+  font-family: 'YearlyNumberFont', zihunruijiehei, 'DIN Alternate', DIN, 'Arial Black', Arial, sans-serif;
+
+}
+
+/* Page2 文字元素动画 - 使用 CSS 动画 */
+.page2-text-item {
+  /* ✅ page2 文字统一由 GSAP 控制，避免与 JS 动画打架导致乱序 */
+  animation: none !important;
+  opacity: 0;
+}
+
+/* 顶部固定文本不使用 CSS 动画，由 GSAP 控制 */
+.page2-top-text-item {
+  animation: none !important;
+  opacity: 0;
+}
+
+/* 之前 nth-child 的 animation-delay 逻辑保留意义不大（已禁用 CSS 动画），删除以免误导 */
+
+@keyframes page2FadeInDown {
+  0% {
+    /* opacity: 0; */
+    /* transform: translateY(-40px) scale(0.95); */
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.page2-text-span {
+  font-family: STYuanti-SC, STYuanti-SC;
+  font-weight: bold;
+  font-size: 24px;
+  color: #E95F00;
+  line-height: 20px;
+  text-align: left;
+  font-style: normal;
+  margin: 0px 4px;
+  font-family: system-ui;
+  display: inline-block;
+  /* text-shadow: 0 2px 4px rgba(233, 95, 0, 0.2); */
+  transition: all 0.3s ease;
+}
+
+
+@keyframes jump {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.page2-text p {
+  line-height: 38px;
+}
+
+.page2-text span {
+  display: inline-block;
+  transition: all 0.3s ease;
+  /* text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15); */
+}
+
+.page2-bird {
+  width: 118px;
+  height: 84px;
+  z-index: 1;
+  margin-top: 2rem;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+  transition: filter 0.3s ease;
+}
+
+.page2-bird:hover {
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.25));
+}
+
+/* Page3 文库页 */
+.page-3 {
+  position: relative;
+}
+
+.page3-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.page3-balloon {
+  position: absolute;
+  width: 225px;
+  height: 287px;
+  height: auto;
+  bottom: 2rem;
+  right: 1rem;
+  z-index: 1;
+  /* animation: float 3s infinite ease-in-out; */
+  /* 使用 GSAP 控制动画 */
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.15));
+  transition: filter 0.3s ease;
+}
+
+.page3-balloon:hover {
+  filter: drop-shadow(0 6px 15px rgba(0, 0, 0, 0.25));
+}
+
+.page3-bird {
+  position: absolute;
+
+  left: 1rem;
+  z-index: 1;
+  animation: fly 4s infinite ease-in-out;
+}
+
+.page3-text {
+  position: absolute;
+  top: 1.2rem;
+  left: 40px;
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 32px;
+  z-index: 2;
+  font-family: cursive;
+}
+
+/* Page3 文字元素动画 - 使用 CSS 动画 */
+.page3-text-item {
+  /* ✅ page3 文字统一由 GSAP 控制，避免 CSS 动画干扰顺序 */
+  animation: none !important;
+  opacity: 0;
+}
+
+/* 顶部 "2025，" 文本不使用 CSS 动画，由 GSAP 控制 */
+.page3-top-text-item {
+  animation: none !important;
+  opacity: 0;
+}
+
+/* 之前 nth-child 的 animation-delay 逻辑保留意义不大（已禁用 CSS 动画），删除以免误导 */
+
+@keyframes page3FadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px) scale(0.95);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.page3-text-span {
+  font-family: zihunhuabanti;
+  font-size: 20px;
+  color: #FDE419;
+  line-height: 16px;
+  text-align: left;
+  font-style: normal;
+  font-family: emoji;
+  font-weight: 600;
+  display: inline-block;
+  /* text-shadow: 0 2px 4px rgba(253, 228, 25, 0.3); */
+  transition: all 0.3s ease;
+}
+
+.page3-text p {
+  line-height: 32px;
+}
+
+.page3-text span {
+  display: inline-block;
+  transition: all 0.3s ease;
+  /* text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15); */
+}
+
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes fly {
+
+  0%,
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+
+  25% {
+    transform: translateX(10px) translateY(-10px);
+  }
+
+  50% {
+    transform: translateX(20px) translateY(0);
+  }
+
+  75% {
+    transform: translateX(10px) translateY(10px);
+  }
+}
+
+/* Page4 总结页 */
+.page-4 {
+  position: relative;
+}
+
+.page4-gsap .page4-keyword {
+  animation: none !important;
+}
+
+.page4-gsap .page4-stat-number {
+  animation: none !important;
+}
+
+.page4-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.page4-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* 顶部标题 */
+.page4-header {
+  text-align: center;
+  margin-bottom: 0.4rem;
+}
+
+.page4-header-title {
+  color: white;
+  font-size: 0.32rem;
+  font-weight: 500;
+  letter-spacing: 0.02rem;
+  margin: 0;
+  font-family: sans-serif;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  animation: page4TitleGlow 3s ease-in-out 1s infinite;
+}
+
+/* 标题发光动画 */
+@keyframes page4TitleGlow {
+
+  0%,
+  100% {
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  50% {
+    text-shadow: 0 2px 15px rgba(255, 215, 0, 0.5),
+      0 0 20px rgba(255, 215, 0, 0.3);
+  }
+}
+
+/* 海报卡片容器 */
+.page4-poster-card {
+  position: relative;
+  width: 100%;
+  max-width: 6.8rem;
+  margin-bottom: 0.5rem;
+  border-radius: 0.24rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* 海报卡片 hover 效果 */
+.page4-poster-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* 截图专用卡片 - 隐藏但保持渲染，无动画 */
+.page4-poster-card-screenshot {
+  position: fixed;
+  left: -9999px;
+  top: 0;
+  width: 100%;
+  max-width: 6.8rem;
+  border-radius: 0.24rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* 截图卡片内的所有元素无动画 */
+.page4-poster-card-screenshot,
+.page4-poster-card-screenshot * {
+  animation: none !important;
+  transition: none !important;
+  transform: none !important;
+  filter: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+
+.page4-poster-bg {
+  width: 320px;
+  height: 507px !important;
+  display: block;
+}
+
+.page4-poster-bg_shot {
+  width: 365px;
+  height: 537px !important;
+  display: block;
+}
+
+.page4-poster-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 96%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 0.8rem 1.2rem;
+  box-sizing: border-box;
+}
+
+/* 关键词图片 */
+.page4-keyword-image {
+  text-align: center;
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page4-keyword {
+  height: auto;
+  margin: 0 0.2rem;
+  animation: page4KeywordFloat 4s ease-in-out 2s infinite;
+  transition: transform 0.3s ease;
+}
+
+/* 关键词图片持续浮动动画 */
+@keyframes page4KeywordFloat {
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  25% {
+    transform: translateY(-5px) rotate(2deg);
+  }
+
+  50% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  75% {
+    transform: translateY(-5px) rotate(-2deg);
+  }
+}
+
+/* 关键词图片 hover 效果 */
+.page4-keyword:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.page4-quote-left,
+.page4-quote-right {
+  color: #666;
+  font-size: 0.6rem;
+  font-weight: bold;
+  font-family: Georgia, serif;
+  line-height: 1;
+}
+
+/* 数据统计 */
+.page4-stats-section {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 0.6rem;
+}
+
+.page4-stat-item {
+  text-align: center;
+  flex: 1;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+/* 数据统计项 hover 效果 */
+.page4-stat-item:hover {
+  transform: translateY(-5px);
+}
+
+.page4-stat-item:hover .page4-stat-number {
+  color: #E95F00;
+  transform: scale(1.15);
+}
+
+.page4-stat-number {
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+  /* 数字使用字体包 */
+  font-family: 'YearlyNumberFont', zihunruijiehei, 'DIN Alternate', DIN, 'Arial Black', Arial, sans-serif;
+  transition: all 0.3s ease;
+  margin-bottom: 4px;
+}
+
+.page4-stat-unit {
+  font-size: 0.28rem;
+  color: #999;
+  margin-left: 0.04rem;
+  font-size: 12px;
+  font-family: fangsong;
+}
+
+.page4-stat-label {
+  font-size: 0.24rem;
+  color: #666;
+  white-space: nowrap;
+
+
+  font-family: STYuanti-SC, STYuanti-SC;
+  font-weight: 400;
+  font-size: 12px;
+  color: #4F4F4F;
+  line-height: 12px;
+  font-style: normal;
+}
+
+/* 寄语区域 */
+.page4-message-box {
+  border: 2px dashed #e0e0e0;
+  border-radius: 0.2rem;
+  padding: 0.4rem;
+  text-align: center;
+  background: rgba(248, 249, 250, 0.95);
+}
+
+.page4-message-text {
+  font-size: 0.28rem;
+  line-height: 0.48rem;
+  color: #333;
+  margin-bottom: 0.1rem;
+}
+
+.page4-year-current,
+.page4-year-next {
+  color: #1890ff;
+  font-weight: 600;
+}
+
+.page4-message-learn {
+  color: #333;
+  font-weight: 500;
+}
+
+.page4-heart-icon {
+  color: #ff4d4f;
+  font-size: 0.32rem;
+  margin-left: 0.08rem;
+}
+
+.page4-message-continue {
+  color: #333;
+  font-weight: 500;
+}
+
+/* 按钮区域 */
+.page4-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.page4-btn-save,
+.page4-btn-learn {
+  height: auto;
+  cursor: pointer;
+}
+
+/* ==================== Page4 动画效果 ==================== */
+
+/* 1. 背景图淡入 */
+.page4-anim-bg {
+  animation: page4BgFadeIn 1s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes page4BgFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 2. 标题从上方滑入并旋转淡入 */
+.page4-anim-title {
+  animation: page4TitleSlideIn 0.8s ease-out forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
+}
+
+@keyframes page4TitleSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px) scale(0.8);
+  }
+
+  60% {
+    transform: translateY(5px) scale(1.05);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* 3. 海报卡片从下方弹出 */
+.page4-anim-card {
+  animation: page4CardBounceIn 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+  animation-delay: 0.6s;
+  opacity: 0;
+}
+
+@keyframes page4CardBounceIn {
+  0% {
+    opacity: 0;
+    transform: translateY(100px) scale(0.5) rotate(-5deg);
+  }
+
+  60% {
+    transform: translateY(-10px) scale(1.05) rotate(2deg);
+  }
+
+  80% {
+    transform: translateY(5px) scale(0.98) rotate(-1deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotate(0deg);
+  }
+}
+
+/* 4. 关键词图片放大闪烁登场 */
+.page4-anim-keyword {
+  animation: page4KeywordZoomIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  animation-delay: 1.2s;
+  opacity: 0;
+}
+
+@keyframes page4KeywordZoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0) rotate(-180deg);
+  }
+
+  50% {
+    transform: scale(1.2) rotate(10deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* 5. 数据统计依次从左右弹入 */
+.page4-anim-stat-1 {
+  animation: page4StatSlideInLeft 0.6s ease-out forwards;
+  animation-delay: 1.6s;
+  opacity: 0;
+}
+
+.page4-anim-stat-2 {
+  animation: page4StatSlideInBottom 0.6s ease-out forwards;
+  animation-delay: 1.8s;
+  opacity: 0;
+}
+
+.page4-anim-stat-3 {
+  animation: page4StatSlideInRight 0.6s ease-out forwards;
+  animation-delay: 2s;
+  opacity: 0;
+}
+
+@keyframes page4StatSlideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px) rotate(-10deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0) rotate(0deg);
+  }
+}
+
+@keyframes page4StatSlideInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) scale(0.8);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes page4StatSlideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px) rotate(10deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0) rotate(0deg);
+  }
+}
+
+/* 6. 保存按钮闪亮登场 + 持续呼吸动画 */
+.page4-anim-button {
+  animation: page4ButtonAppear 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards,
+    page4ButtonBreath 2s ease-in-out 2.5s infinite;
+  animation-delay: 2.2s, 2.2s;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+@keyframes page4ButtonAppear {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) scale(0.3) rotate(-10deg);
+  }
+
+  50% {
+    transform: translateY(-10px) scale(1.1) rotate(5deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotate(0deg);
+  }
+}
+
+@keyframes page4ButtonBreath {
+
+  0%,
+  100% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+
+  50% {
+    transform: scale(1.08);
+    filter: brightness(1.15) drop-shadow(0 0 20px rgba(255, 215, 0, 0.6));
+  }
+}
+
+/* 按钮 hover 效果 */
+.page4-btn-save:hover {
+  transform: scale(1.1) rotate(2deg);
+  filter: brightness(1.2) drop-shadow(0 8px 25px rgba(255, 215, 0, 0.8));
+}
+
+/* 按钮 active 点击效果 */
+.page4-btn-save:active {
+  transform: scale(0.95) rotate(-2deg);
+  filter: brightness(0.9);
+}
+
+/* 数据数字跳动效果 */
+.page4-stat-number {
+  animation: page4NumberPulse 1.5s ease-in-out infinite;
+  animation-delay: 3s;
+}
+
+@keyframes page4NumberPulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* 文字动画 */
+/* .s0-top p,
+.s1-top p,
+.s2-top p,
+.s3-top p,
+.page1,
+.page2,
+.page3,
+.page4 {
+  animation: word 1s infinite linear forwards;
+  animation-iteration-count: 1;
+  display: none;
+  opacity: 0;
+} */
+
+@keyframes word {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes word {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Next 箭头 */
+.next {
+  position: absolute;
+  text-align: center;
+  width: 100vw;
+  left: 0.05rem;
+  top: 94vh;
+  z-index: 999;
+  opacity: 0;
+  animation: nextShow 1s infinite linear forwards;
+  animation-iteration-count: 1;
+  transform: rotate(180deg);
+}
+
+@keyframes nextShow {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes nextShow {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.next span {
+  height: 3vh;
+  overflow: hidden;
+  width: auto;
+}
+
+.next img {
+  height: 4vh;
+}
+
+.next label {
+  display: block;
+  position: relative;
+  color: #fff;
+  width: auto;
+  height: 4vh;
+  text-align: center;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bold;
+  text-decoration: none;
+  margin: 0 auto;
+  overflow: hidden;
+  -webkit-transition: all 0.15s ease-in;
+  transition: all 0.15s ease-in;
+  -webkit-animation: nextAn 1.2s infinite linear;
+  animation: nextAn 1.2s infinite linear;
+}
+
+@keyframes nextAn {
+  0% {
+    top: -1vh;
+    opacity: 0;
+  }
+
+  100% {
+    top: 1vh;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes nextAn {
+  0% {
+    top: -1vh;
+    opacity: 0;
+  }
+
+  100% {
+    top: 1vh;
+    opacity: 1;
+  }
+}
+
+/* 音乐 */
+.music {
+  position: fixed;
+  right: 1vw;
+  top: 3vh;
+  width: 10vw;
+  height: 10vw;
+  z-index: 9999;
+  color: #fff;
+}
+
+.music-img1 {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  width: 0.6rem;
+  height: 0.6rem;
+}
+
+.music-an {
+  animation: music 5s infinite linear;
+}
+
+@keyframes music {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes music {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 遮罩层 */
+.swiper-shade {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  opacity: 0;
+  background: #000000;
+  z-index: 2;
+}
+
+/* 海报相关样式 */
+.poster-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10000;
+}
+
+.poster-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+.poster-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80vw;
+  max-width: 6.8rem;
+  z-index: 2;
+  background: linear-gradient(180deg, #5a6c7d 0%, #3d4a5a 100%);
+  border-radius: 0.24rem;
+  padding: 0.4rem;
+  box-sizing: border-box;
+}
+
+/* 海报顶部标题 */
+.poster-header {
+  text-align: center;
+  margin-bottom: 0.4rem;
+}
+
+.poster-header-title {
+  color: white;
+  font-size: 0.32rem;
+  font-weight: 500;
+  letter-spacing: 0.02rem;
+  margin: 0;
+}
+
+/* 海报卡片 */
+.poster-card {
+  position: relative;
+  background: white;
+  border-radius: 0.24rem;
+  overflow: hidden;
+  margin-bottom: 0.3rem;
+}
+
+.poster-bg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.poster-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 0.8rem 1.2rem;
+  box-sizing: border-box;
+}
+
+/* 海报关键词图片 */
+.poster-keyword-image {
+  text-align: center;
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.poster-keyword {
+  width: 3.6rem;
+  height: auto;
+  margin: 0 0.2rem;
+}
+
+.poster-quote-left,
+.poster-quote-right {
+  color: #666;
+  font-size: 0.6rem;
+  font-weight: bold;
+  font-family: Georgia, serif;
+  line-height: 1;
+}
+
+/* 海报底部学校名 */
+.poster-footer {
+  text-align: center;
+}
+
+.poster-school-name {
+  color: white;
+  font-size: 0.28rem;
+  font-weight: 500;
+}
+
+/* 海报数据统计 */
+.poster-stats-section {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 0.6rem;
+}
+
+.poster-stat-item {
+  text-align: center;
+  flex: 1;
+}
+
+.poster-stat-number {
+  font-size: 0.64rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 0.16rem;
+  font-family: 'Arial', sans-serif;
+}
+
+.poster-stat-unit {
+  font-size: 0.28rem;
+  color: #999;
+  margin-left: 0.04rem;
+}
+
+.poster-stat-label {
+  font-size: 0.24rem;
+  color: #666;
+  white-space: nowrap;
+}
+
+/* 海报寄语区域 */
+.poster-message-box {
+  border: 2px dashed #e0e0e0;
+  border-radius: 0.2rem;
+  padding: 0.4rem;
+  text-align: center;
+  background: rgba(248, 249, 250, 0.95);
+}
+
+.poster-message-text {
+  font-size: 0.28rem;
+  line-height: 0.48rem;
+  color: #333;
+  margin-bottom: 0.1rem;
+}
+
+.poster-year-current,
+.poster-year-next {
+  color: #1890ff;
+  font-weight: 600;
+}
+
+.poster-message-learn {
+  color: #333;
+  font-weight: 500;
+}
+
+.poster-heart-icon {
+  color: #ff4d4f;
+  font-size: 0.32rem;
+  margin-left: 0.08rem;
+}
+
+.poster-message-continue {
+  color: #333;
+  font-weight: 500;
+}
+
+/* 海报预览遮罩层（参考 Poster.vue） */
+.poster-overlay {
+  position: fixed;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.poster-image-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.poster-image-wrapper img {
+  max-width: 100%;
+  max-height: calc(90vh - 60px);
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.poster-tip {
+  margin-top: 20px;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  /* 增加波浪式的动画效果 */
+  animation: wave 1.5s ease-in-out infinite;
+}
+
+@keyframes wave {
+  0% {
+    transform: translateY(0);
+
+  }
+
+  50% {
+    transform: translateY(-5px);
+    scale: 1.05;
+  }
+
+  100% {
+    transform: translateY(0);
+    scale: 1;
+  }
+}
+
+
+/* Loading 样式 */
+.poster-loading {
+  position: fixed;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 9998;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-text {
+  margin-top: 1px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  animation: textBlink 1.5s ease-in-out infinite;
+}
+
+/* 呱呱加载动效容器 */
+.guagua-loading-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+/* 呱呱图片背景光晕 */
+.guagua-loading-container::before {
+  content: '';
+  position: absolute;
+  width: 68px;
+  height: 82px;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.3), transparent 70%);
+  border-radius: 50%;
+  animation: glowPulse 2s ease-in-out infinite;
+  z-index: -1;
+}
+
+/* 光晕脉冲动画 */
+@keyframes glowPulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+/* 呱呱图片动画 */
+.guagua-loading-image {
+  width: 58;
+  height: 74px;
+  animation: guaguaJump 1.2s ease-in-out infinite;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+}
+
+/* 呱呱跳动动画 */
+@keyframes guaguaJump {
+
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+
+  25% {
+    transform: translateY(-20px) scale(1.05) rotate(-3deg);
+  }
+
+  50% {
+    transform: translateY(0) scale(0.95) rotate(0deg);
+  }
+
+  75% {
+    transform: translateY(-10px) scale(1.02) rotate(3deg);
+  }
+}
+
+/* 加载点容器 */
+.guagua-loading-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+/* 加载点样式 */
+.guagua-loading-dots span {
+  width: 6px;
+  height: 6px;
+  background: linear-gradient(135deg, #FFD700, #FFA500);
+  border-radius: 50%;
+  animation: dotBounce 1.4s ease-in-out infinite;
+  box-shadow: 0 4px 8px rgba(255, 165, 0, 0.5);
+}
+
+/* 三个点依次跳动 */
+.guagua-loading-dots span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.guagua-loading-dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.guagua-loading-dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* 点的跳动动画 */
+@keyframes dotBounce {
+
+  0%,
+  80%,
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.7;
+  }
+
+  40% {
+    transform: translateY(-15px) scale(1.3);
+    opacity: 1;
+  }
+}
+
+/* 文字闪烁动画 */
+@keyframes textBlink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.6;
+  }
+}
